@@ -19,3 +19,11 @@ code {
 .movie-miniature {
   width: 400px;
 }
+
+a {
+  color: lightskyblue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
