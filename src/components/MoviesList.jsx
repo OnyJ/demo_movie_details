@@ -1,13 +1,22 @@
+import Screenshot from "../assets/Screenshot.png";
+
 const MoviesList = ({ movies }) => {
   return (
-    <>
-      <h2>My list</h2>
+    <div>
+      <h2 className="special-title">My list</h2>
       <ul>
-        {movies.map((movie) => (
-          <li>{movie}</li>
+        {movies.map((movie, key) => (
+          <li key={key}>
+            <p>{movie}</p>
+            <img
+              className="movie-miniature"
+              src={Screenshot}
+              alt="movie illustration"
+            />
+          </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 };
 
