@@ -7,8 +7,8 @@ const Trending = () => {
 
   useEffect(() => {
     console.log("Trending");
-  }, [click])
-  
+  }, [click]);
+
   const handleClick = () => {
     console.log("Clicked");
     setClick(click + 1);
