@@ -1,13 +1,14 @@
-import MoviesList from './components/MoviesList'
+import MoviesList from "./components/MoviesList";
+import SearchMovie from "./pages/SearchMovie";
+import Trending from "./pages/Trending";
 
 const App = () => {
-  const moviesArray = ["Fast and furious", "Barbie", "Nemo"]
-
   return (
     <div className="App">
-      <MoviesList movies={moviesArray} />
+      <SearchMovie />
+      <Trending />
     </div>
   );
-}
+};
 
 export default App;
