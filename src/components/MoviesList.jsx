@@ -1,8 +1,6 @@
 import Screenshot from "../assets/Screenshot.png";
 
-const MoviesList = ({ url, movies }) => {
-  const BASE_URL = "https://api.themoviedb.org/3/discover/movie";
-
+const MoviesList = ({ movies }) => {
   return (
     <div>
       <h2 className="special-title">My list</h2>
