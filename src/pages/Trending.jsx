@@ -1,9 +1,15 @@
+import React, { useMemo } from "react";
 import { useEffect, useState } from "react";
 import MoviesList from "../components/MoviesList";
 import { getTrends } from "../services/tmdb";
-import axios from "axios";
 
-const Trending = () => {
+const Trending = React.memo(() => {
+  const computedValue = useMemo(() => {
+    console.log("big calculation");
+    const data = "1234";
+    return data;
+  });
+
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -12,7 +18,12 @@ const Trending = () => {
     });
   }, []);
 
-  return <MoviesList movies={movies} />;
-};
+  return (
+    <>
+      <p>Computed data = {computedValue}</p>
+      <MoviesList movies={movies} />
+    </>
+  );
+});
 
 export default Trending;
