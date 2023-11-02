@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
+import { useRef } from "react";
 
 const SearchMovie = () => {
   const [title, setTitle] = useState(<h1>Recherche...</h1>);
   const [search, setSearch] = useState("");
+  const myInputRef = useRef(null);
+
+  const focusInput = () => {
+    myInputRef.current.focus();
+  }
+
+  useEffect(() => {
+    focusInput();
+  }, [])
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,6 +31,7 @@ const SearchMovie = () => {
       {title}
       <form onSubmit={handleSubmit}>
         <input
+          ref={myInputRef}
           type="text"
           name="search"
           placeholder="Rechercher un film..."
